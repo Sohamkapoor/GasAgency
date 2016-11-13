@@ -6,153 +6,328 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
+
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>New Connection Form</title>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Agency Software</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/css/form-elements.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+
     </head>
+
     <body>
-        <!-- === Header === -->
-        <header>
-        </header>
-        
-        <!-- === Customer Detail === -->
-        <section id="form">
-            <article>
-                <div class="container clearfix">
-                    <form method="post" action="newconnection">
-                    <h1>New Customer connection Form :</h1> <br/>
-                           <!-- insert image --> 
-                            
-            Salutation       : <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="salutation" value="Mr"> Mr 
-                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="salutation" value="Mrs"> Mrs 
-                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="salutation" value="Ms"> Ms 
-                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="salutation" value="Miss"> Miss <br/>
-            First Name       : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="fname"> <br/>
-            Middle Name      : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="mname"> <br/>
-            Last Name        : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="lname"> <br/>
-            Customer Number  : &nbsp; &nbsp;&nbsp;<input type="number" name="number"><br/>
-            Date Of Birth    : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input class="datepicker" type="text" name="date" value="" readonly /><br/>
-            Father's Name    : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="text" name="faname"><br/>
-            Mother's Name    : &nbsp; &nbsp; &nbsp; &nbsp;<input type="text" name="moname"><br/>
-            Name Of Spouse   : &nbsp; &nbsp; &nbsp;<input type="text" name="sname"><br/>
-            Address          : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="textarea" name="address"><br/>
-            Pin Code         : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="number" name="pincode"><br/>
-            Mobile Number    : &nbsp; &nbsp; &nbsp; &nbsp;<input type="number" name="cnumber"><br/>
-            Email ID         : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="email" name="email"><br/>
-           <br/>
-            <br/> <br/>
-            <div class="row">
-                        
-                        <div class="col-sm-5">
-                             Note: At least one of the document is necessary for Proof Of Address
-           <br/> Kindly tick the document provided for Proof Of Address. <br/><br/>
-            <table border="1px" align="left">
-                
-            <tr>    
-                <td><input type="checkbox" name="document" value="Aadhar">Aadhar Card </td>
-                <td><input type="checkbox" name="document" value="LeaseAggrement">Lease Aggrement / rent receipt</td>
-                <td><input type="checkbox" name="document" value="Telephone">Telephone </td>     
-                
-            </tr>
-            <tr>
-                <td><input type="checkbox" name="document" value="FlatAllotment">Flat Allotment</td>
-                <td><input type="checkbox" name="document" value="LICPolicy"> LIC Policy</td>
-                <td><input type="checkbox" name="document" value="voter"> Voter Id </td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" name="document" value="dl">Driving License</td>
-                <td><input type="checkbox" name="document" value="passport">Passport </td>
-                <td><input type="checkbox" name="document" value="Ration card"> Ration Card</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" name="document" value="house">House Registration Document </td>
-                <td><input type="checkbox" name="document" value="Self-Declaration"> Self-Declaration</td>
-            </tr>
-            </table>
-            
+
+		<!-- Top menu -->
+		<nav class="navbar navbar-inverse navbar-no-bg" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html">Consumer Information Sheet</a>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="top-navbar-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<span class="li-text">
+								Put some text or
+							</span> 
+							<a href="#"><strong>links</strong></a> 
+							<span class="li-text">
+								here, or some icons: 
+							</span> 
+							<span class="li-social">
+								<a href="#"><i class="fa fa-facebook"></i></a> 
+								<a href="#"><i class="fa fa-twitter"></i></a> 
+								<a href="#"><i class="fa fa-envelope"></i></a> 
+								<a href="#"><i class="fa fa-skype"></i></a>
+							</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+        <!-- Top content -->
+        <div class="top-content">
+        	
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1><strong>Shri Mangalam Indane</strong> Customer Information Sheet </h1>
+                            <div class="description">
+                            	<p>
+	                            	<!--This is a free responsive multi-step registration form made with Bootstrap. 
+	                            	Download it on <a href="http://azmind.com"><strong>AZMIND</strong></a>, customize and use it as you like!-->
+                            	</p>
+                            </div>
                         </div>
-                        <div class="col-sm-7">                           
-                               
-            If yes Please give photo state of the I.D. <br/>
-            <table border="1px" align="left">
-                <tr>
-                    <th> I.D. Number </th>
-                    <th> Yes </th>
-                    <th> No </th>
-                </tr>
-                <tr>
-                    <td> Do you have Pan Card? if yes enter number <input type="text" name="pancard"></td>
-                    <td> <input type="checkbox" name="pan" value="Yes">  </td>
-                    <td> <input type="checkbox" name="pan" value="No">  </td>
-                </tr>
-                
-                <tr>
-                    <td> Do you have Passport ? if yes enter number <input type="text" name="passportno"></td>
-                    <td> <input type="checkbox" name="passport" value="Yes">  </td>
-                    <td> <input type="checkbox" name="passport" value="No">  </td>
-                </tr>
-                
-                <tr>
-                    <td> Do you have Driving License? if yes enter number <input type="text" name="drivinglicense"></td>
-                    <td> <input type="checkbox" name="driving" value="Yes">  </td>
-                    <td> <input type="checkbox" name="driving" value="No">  </td>
-                </tr>
-                
-                <tr>
-                    <td> Do you have Ration Card? if yes enter number <input type="text" name="rationcard"></td>
-                    <td> <input type="checkbox" name="ration" value="Yes">  </td>
-                    <td> <input type="checkbox" name="ration" value="No">  </td>
-                </tr>
-                
-                <tr>
-                    <td> Do you have Adhar Number? if yes enter number <input type="text" name="adharcard"></td>
-                    <td> <input type="checkbox" name="adhar" value="Yes">  </td>
-                    <td> <input type="checkbox" name="adhar" value="No">  </td>
-                </tr>
-                
-                <tr>
-                    <td> Do you have Voter Id? if yes enter number <input type="text" name="voterno"></td>
-                    <td> <input type="checkbox" name="voter" value="Yes">  </td>
-                    <td> <input type="checkbox" name="voter" value="No">  </td>
-                </tr>
-                
-                <tr>
-                    <td> Do you have Central/State Government Id? if yes enter number <input type="text" name="state"></td>
-                    <td> <input type="checkbox" name="central" value="Yes">  </td>
-                    <td> <input type="checkbox" name="central" value="No">  </td>
-                </tr>
-            </table>
-                        </div><!-- col -->
-                    </div><!-- row -->
-                        
-                        
-                         </form>
-                </div><!-- container -->
-            </article>    
-        </section>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 form-box">
+                        	
+                        	<form role="form" action="newconnection" method="post" class="registration-form">
+                        		
+								<fieldset>
+		                        	<div class="form-top">
+		                        		<div class="form-top-left">
+		                        			<h3>Step 1 / 3</h3>
+		                            		<p>Tell us who you are:</p>
+		                        		</div>
+		                        		<div class="form-top-right">
+		                        			<i class="fa fa-user"></i>
+		                        		</div>
+		                            </div>
+							
+		                            <div class="form-bottom">
+				                    	<div class="form-group">
+				                    		<label class="sr-only" for="form-first-name">First name </label>
+				                        	<input type="text" name="form-first-name" placeholder="First name" class="form-first-name form-control" id="form-first-name" >
+										</div>
+										<div class="form-group">
+				                        	<label class="sr-only" for="middle-name">Middle name</label>
+				                        	<input type="text" name="middle-name" placeholder="Middle name" class="middle-name form-control" id="middle-name" >
+				                        </div>
+				                        <div class="form-group">
+				                        	<label class="sr-only" for="form-last-name">Last name</label>
+				                        	<input type="text" name="form-last-name" placeholder="Last name" class="form-last-name form-control" id="form-last-name">
+				                        </div>
+										<div class="form-group">
+				                        	<label class="sr-only" for="form-dob">Date Of Birth</label>
+				                        	<input type="text" name="form-dob" placeholder="Date of Birth" class="form-dob form-control" id="form-dob">
+				                        </div>
+										<div class="form-group">
+				                        	<label class="sr-only" for="form-father-name">Father's Name</label>
+				                        	<input type="text" name="form-father-name" placeholder="Father's Name" class="form-father-name form-control" id="form-father-name">
+				                        </div>
+										<div class="form-group">
+				                        	<label class="sr-only" for="form-mother-name">Mother's Name</label>
+				                        	<input type="text" name="form-mother-name" placeholder="Mother's Name" class="form-mother-name form-control" id="form-mother-name">
+				                        </div>
+										<div class="form-group">
+				                        	<label class="sr-only" for="form-spouse">Spouse's Name</label>
+				                        	<input type="text" name="form-spouse" placeholder="Spouse's Name" class="form-spouse form-control" id="form-spouse">
+				                        </div>
+										
+				                        <div class="form-group">
+				                        	<label class="sr-only" for="form-address">Address</label>
+				                        	<textarea name="form-address" placeholder="Address..." 
+				                        				class="form-address form-control" id="form-address"></textarea>
+				                        </div>
+										<div class="form-group">
+				                        	<label class="sr-only" for="form-pincode">Pin Code</label>
+				                        	<input type="text" name="form-pincode" placeholder="Pin Code" class="form-pincode form-control" id="form-pincode">
+				                        </div>
+										<div class="form-group">
+				                        	<label class="sr-only" for="form-telephone">Telephone</label>
+				                        	<input type="number" name="form-telephone" placeholder="Telephone" class="form-telephone form-control" id="form-telephone">
+				                        </div>
+										<div class="form-group">
+				                        	<label class="sr-only" for="form-mob">Mobile Number</label>
+				                        	<input type="number" name="form-mob" placeholder="Mobile Number" class="form-mob form-control" id="form-mob">
+				                        </div>
+										<div class="form-group">
+				                        	<label class="sr-only" for="form-email">Email</label>
+				                        	<input type="email" name="form-email" placeholder="Email ID" class="form-email form-control" id="form-email">
+				                        </div>
+				                        <button type="button" class="btn btn-next">Next</button>
+				                    </div>
+			                    </fieldset>
+			                    
+			                    <fieldset>
+		                        	<div class="form-top">
+		                        		<div class="form-top-left">
+		                        			<h3>Step 2 / 3</h3>
+		                            		<p>Set up your Bank Details:</p>
+		                        		</div>
+		                        		<div class="form-top-right">
+		                        			<i class="fa fa-key"></i>
+		                        		</div>
+		                            </div>
+		                            <div class="form-bottom">
+				                        <div class="form-group">
+				                        	<label class="sr-only" for="form-bank">Bank Name</label>
+				                        	<input type="text" name="form-bank" placeholder="Bank Name..." class="form-bank form-control" id="form-bank">
+				                        </div>
+				                        <div class="form-group">
+				                        	<label class="sr-only" for="form-branch-address">Branch & Address</label>
+				                        	<textarea name="form-branch-address" placeholder="Branch & Address..." 
+				                        				class="form-branch-address form-control" id="form-branch-address"></textarea>
+				                        </div>
+				                        <div class="form-group">
+				                        	<label class="sr-only" for="form-ifsc"> IFSC Code </label>
+				                        	<input type="text" name="form-ifsc" placeholder="IFSC Code..." 
+				                        				class="form-ifsc form-control" id="form-ifsc">
+				                        </div>
+										<div class="form-group">
+				                        	<label class="sr-only" for="form-accno"> Account Number </label>
+				                        	<input type="text" name="form-accno" placeholder="Account Number..." 
+				                        				class="form-accno form-control" id="form-accno">
+				                        </div>
+				                        <button type="button" class="btn btn-previous">Previous</button>
+				                        <button type="button" class="btn btn-next">Next</button>
+				                    </div>
+			                    </fieldset>
+			                    
+			                    <fieldset>
+		                        	<div class="form-top">
+		                        		<div class="form-top-left">
+		                        			<h3>Step 3 / 3</h3>
+		                            		<p>Customer Identity Details:</p>
+		                        		</div>
+		                        		<div class="form-top-right">
+		                        			<i class="fa fa-twitter"></i>
+		                        		</div>
+		                            </div>
+									 	<div class="form-bottom">
+											<div class="row" id="table">
+												<div class="col-sm-6">
+													<div class="form-group">
+													<label class="sr-only" for="form-adhar">Adhar</label>												
+													<input type="checkbox" name="form-document" class="form-adhar form-control" value="adhar" id="form-adhar">Adhar
+													</div>
+													<div class="form-group">
+													<label class="sr-only" for="form-flat">Flat Allotment</label>												
+													<input type="checkbox" name="form-document" class="form-flat form-control" value="flat allotment" id="form-flat">Flat Allotment
+													</div>
+													<div class="form-group">
+													<label class="sr-only" for="form-telephone">Telephone</label>												
+													<input type="checkbox" name="form-document" class="form-telephone form-control" value="telephone" id="form-telephone">Telephone
+													</div>
+													<div class="form-group">
+													<label class="sr-only" for="form-lease">Lease Aggrement</label>												
+													<input type="checkbox" name="form-document" class="form-lease form-control" value="lease aggrement" id="form-lease">Lease Aggrement
+													</div>
+													<div class="form-group">
+													<label class="sr-only" for="form-lic"> LIC Policy </label>												
+													<input type="checkbox" name="form-document" class="form-lic form-control" value="lic policy" id="form-lic">LIC Policy
+													</div>
+													
+												</div><!-- col -->
+												
+												<div class="col-sm-6" >
+													<div class="form-group">
+													<label class="sr-only" for="form-voter"> Voter ID </label>												
+													<input type="checkbox" name="form-document" class="form-voter form-control" value="voter id" id="form-voter"> Voter ID
+													</div>
+													<div class="form-group">
+													<label class="sr-only" for="form-dl"> Driving License </label>												
+													<input type="checkbox" name="form-document" class="form-dl form-control" value="driving license" id="form-dl">Driving Licence
+													</div>
+													<div class="form-group">
+													<label class="sr-only" for="form-passport"> Passport </label>												
+													<input type="checkbox" name="form-document"  class="form-passport form-control" value="passport" id="form-passport"> Passport
+													</div>
+													<div class="form-group">
+													<label class="sr-only" for="form-rc"> Ration Card </label>												
+													<input type="checkbox" name="form-document"  class="form-rc form-control" value="ration card" id="form-rc">Ration Card
+													</div>
+													<div class="form-group">
+													<label class="sr-only" for="form-house"> House Registration </label>												
+													<input type="checkbox" name="form-document"  class="form-house form-control" value="house registration" id="form-house">House Registration
+													</div>
+													<div class="form-group">
+													<label class="sr-only" for="form-self"> Self-Declaration </label>												
+													<input type="checkbox" name="form-document" class="form-self form-control" value="self declaration" id="form-self">Self-Declaration
+													</div>
+												</div><!-- col -->
+										</div><!-- row -->
+											
+											<hr>
+											
+											<div class="row" id="table">	
+												<div class="col-sm-6">
+													<div class="form-bottom">
+														<div class="form-group">
+															<label class="sr-only" for="form-adharno">Adharno</label>
+															<input type="text" name="form-adharno" placeholder="Adhar Number..." class="form-adharno form-control" id="form-adharno">
+														</div>
+														<div class="form-group">
+															<label class="sr-only" for="form-panno">Pan Card</label>
+															<input type="text" name="form-panno" placeholder="Pan Card Number..." class="form-panno form-control" id="form-panno">
+														</div>
+														<div class="form-group">
+															<label class="sr-only" for="form-passportno">Passport</label>
+															<input type="text" name="form-passportno" placeholder="Passport Number..." class="form-passportno form-control" id="form-passportno">
+														</div>
+														<div class="form-group">
+															<label class="sr-only" for="form-dlno">Driving Licence</label>
+															<input type="text" name="form-dlno" placeholder="Driving Licence ..." class="form-dlno form-control" id="form-dlno">
+														</div>
+													</div>
+											    </div><!-- col -->
+												<div class="col-sm-6">
+													<div class="form-bottom">
+														<div class="form-group">
+															<label class="sr-only" for="form-rationno">Ration Card</label>
+															<input type="text" name="form-rationno" placeholder="Ration Card Number..." class="form-rationno form-control" id="form-rationno">
+														</div>
+														<div class="form-group">
+															<label class="sr-only" for="form-voterno">Voter ID Card</label>
+															<input type="text" name="form-voterno" placeholder="Voter ID Card Number..." class="form-voterno form-control" id="form-voterno">
+														</div>
+														<div class="form-group">
+															<label class="sr-only" for="form-stateid">Central/State Govt ID </label>
+															<input type="text" name="form-stateid" placeholder="Central/State Govt ID..." class="form-stateid form-control" id="form-stateid">
+														</div>
+													</div>
+											    </div><!-- col -->
+											</div><!-- row -->
+				                        <button type="button" class="btn btn-previous">Previous</button>
+                                                        <input type="submit" value="submit"/>
+						
+			            </fieldset>
+		                    
+		                    </form>
+		                </div>
+                     </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+
+        <!-- Javascript -->
+        <script src="assets/js/jquery-1.11.1.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.backstretch.min.js"></script>
+        <script src="assets/js/retina-1.1.0.min.js"></script>
+        <script src="assets/js/scripts.js"></script>
         
-        <!-- === Id submitting === -->
-        <section>
-            
-        </section>
-        
-        <!-- === Id Number === -->
-        <section>
-            
-        </section>
-        <!-- === Bank Detail === -->
-        <section>
-            
-        </section>
-        <!-- === Declaration === -->
-        <section>
-            
-        </section>
-        <!-- === Footer === -->
-        <footer>
-            
-        </footer>
-        
+        <!--[if lt IE 10]>
+            <script src="assets/js/placeholder.js"></script>
+        <![endif]-->
+
     </body>
+
 </html>
