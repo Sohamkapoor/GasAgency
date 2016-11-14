@@ -39,14 +39,14 @@
             String[] id = request.getParameterValues("form-document");
             String adharno = request.getParameter("form-adharno");
             String pan = request.getParameter("form-panno");
-            //System.out.println("check="+request.getParameter("form-passport"));
+           
             String passport = request.getParameter("form-passport");
             String dl= request.getParameter("form-dlno");
             String ration = request.getParameter("form-rationno");
             String voter = request.getParameter("form-voterno");
             String state = request.getParameter("form-stateid");
             String stove = request.getParameter("form-stove");
-            System.out.println("passport ="+passport);
+            if(passport==null){passport="";}
         %>
         <table border="1px">
         <tr> <td> <h3>Customer Joining Date :</h3></td><td> <%= new java.util.Date() %></td></tr>
@@ -80,6 +80,8 @@
         <tr> <td><h3>Driving Licence :</h3></td><td> <%= dl %><%}%></td></tr>
         <% if(ration.equals("")){} else{%>
         <tr> <td><h3>Ration Card :</h3> </td><td> <%= ration %><%}%></td></tr>
+         <% if(passport.equals("")){} else{%>
+        <tr> <td><h3>Passport Number :</h3> </td><td> <%= passport %><%}%></td></tr>
         <% if(voter.equals("")){} else{%>
         <tr> <td><h3>Voter ID :</h3> </td><td><%= voter %><%}%></td></tr>
         <% if(state.equals("")){} else{%>
@@ -101,7 +103,7 @@
             will be well within its right to take necessary action including discontinuation of supply of LPG cylinders,
             can forfeit the security<br/> deposit and can levy panel charges as per the policy and guidelines. I am willing/not
             willing to avail the subsidy on LPG cylinders therefore I have provided/not provided my Bank account details on the above request form.</font></p><br/>
-        <br/> Name : <%= customername + " "+" "%>  <p align="center">Signature Of Customer : </p> 
+        <br/> Name : <%= customername + " "+" "%>  <p align="right">Signature Of Customer : </p> 
         <p>Date : <%= new java.util.Date()%></p>
          
         <p style="page-break-after:always;"></p>
