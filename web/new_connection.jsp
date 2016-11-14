@@ -58,11 +58,11 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li>
 							<span class="li-text">
-								Put some text or
+								<!--Put some text or-->
 							</span> 
-							<a href="#"><strong>links</strong></a> 
+							<!--a href="#"><strong>links</strong></a--> 
 							<span class="li-text">
-								here, or some icons: 
+								<!--here, or some icons: -->
 							</span> 
 							<span class="li-social">
 								<a href="#"><i class="fa fa-facebook"></i></a> 
@@ -109,15 +109,21 @@
 		                            </div>
 							
 		                            <div class="form-bottom">
-                                                           
+                                                <div class="form-group">
+				                <label  for="Salute">Salutation </label>
+				                <input type="radio" name="salutation" id="Mr" value="Mr">Mr
+                                                <input type="radio" name="salutation" id="Mrs" value="Mrs">Mrs
+                                                <input type="radio" name="salutation" id="Ms" value="Ms">Ms
+                                                <input type="radio" name="salutation" id="Miss" value="Miss">Miss
+                                                </div>           
                                                                 <div class="form-group">
 				                    		<label class="sr-only" for="form-first-name">First name </label>
 				                        	<input type="text" name="form-first-name" placeholder="First name" class="form-first-name form-control" id="form-first-name" >
-										</div>
-										<div class="form-group">
+                                                                </div>
+								<div class="form-group">
 				                        	<label class="sr-only" for="middle-name">Middle name</label>
 				                        	<input type="text" name="middle-name" placeholder="Middle name" class="middle-name form-control" id="middle-name" >
-				                        </div>
+                                                                </div>
 				                        <div class="form-group">
 				                        	<label class="sr-only" for="form-last-name">Last name</label>
 				                        	<input type="text" name="form-last-name" placeholder="Last name" class="form-last-name form-control" id="form-last-name">
@@ -146,7 +152,7 @@
 				                        </div>
 										<div class="form-group">
 				                        	<label class="sr-only" for="form-pincode">Pin Code</label>
-				                        	<input type="text" name="form-pincode" placeholder="Pin Code" class="form-pincode form-control" id="form-pincode">
+				                        	<input type="number" name="form-pincode" min="100000" max="999999" placeholder="Pin Code" class="form-pincode form-control" id="form-pincode">
 				                        </div>
 										<div class="form-group">
 				                        	<label class="sr-only" for="form-telephone">Telephone</label>
@@ -154,7 +160,7 @@
 				                        </div>
 										<div class="form-group">
 				                        	<label class="sr-only" for="form-mob">Mobile Number</label>
-                                                                <input type="number" name="form-mob" minlength="10" maxlength="10" placeholder="Mobile Number" class="form-mob form-control" id="form-mob">
+                                                                <input type="number" name="form-mob" min="1111111111" max="9999999999" placeholder="Mobile Number" class="form-mob form-control" id="form-mob">
 				                        </div>
 										<div class="form-group">
 				                        	<label class="sr-only" for="form-email">Email</label>
