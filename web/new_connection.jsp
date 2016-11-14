@@ -95,7 +95,7 @@
                     <div class="row">
                         <div class="col-sm-6 col-sm-offset-3 form-box">
                         	
-                        	<form role="form" action="newconnection" method="post" class="registration-form">
+                        	<form role="form" action="newconnection.jsp" method="post" class="registration-form">
                         		
 								<fieldset>
 		                        	<div class="form-top">
@@ -109,7 +109,8 @@
 		                            </div>
 							
 		                            <div class="form-bottom">
-				                    	<div class="form-group">
+                                                           
+                                                                <div class="form-group">
 				                    		<label class="sr-only" for="form-first-name">First name </label>
 				                        	<input type="text" name="form-first-name" placeholder="First name" class="form-first-name form-control" id="form-first-name" >
 										</div>
@@ -123,7 +124,7 @@
 				                        </div>
 										<div class="form-group">
 				                        	<label class="sr-only" for="form-dob">Date Of Birth</label>
-				                        	<input type="text" name="form-dob" placeholder="Date of Birth" class="form-dob form-control" id="form-dob">
+				                        	<input type="text" name="form-dob" placeholder="Date of Birth format: DD/MM/YYYY" class="form-dob form-control" id="form-dob">
 				                        </div>
 										<div class="form-group">
 				                        	<label class="sr-only" for="form-father-name">Father's Name</label>
@@ -149,11 +150,11 @@
 				                        </div>
 										<div class="form-group">
 				                        	<label class="sr-only" for="form-telephone">Telephone</label>
-				                        	<input type="number" name="form-telephone" placeholder="Telephone" class="form-telephone form-control" id="form-telephone">
+				                        	<input type="text" name="form-telephone" placeholder="Telephone" class="form-telephone form-control" id="form-telephone">
 				                        </div>
 										<div class="form-group">
 				                        	<label class="sr-only" for="form-mob">Mobile Number</label>
-				                        	<input type="number" name="form-mob" placeholder="Mobile Number" class="form-mob form-control" id="form-mob">
+                                                                <input type="number" name="form-mob" minlength="10" maxlength="10" placeholder="Mobile Number" class="form-mob form-control" id="form-mob">
 				                        </div>
 										<div class="form-group">
 				                        	<label class="sr-only" for="form-email">Email</label>
@@ -213,23 +214,23 @@
 												<div class="col-sm-6">
 													<div class="form-group">
 													<label class="sr-only" for="form-adhar">Adhar</label>												
-													<input type="checkbox" name="form-document" class="form-adhar form-control" value="adhar" id="form-adhar">Adhar
+													<input type="checkbox" name="form-document"  value="adhar" id="form-adhar">  Adhar
 													</div>
 													<div class="form-group">
-													<label class="sr-only" for="form-flat">Flat Allotment</label>												
-													<input type="checkbox" name="form-document" class="form-flat form-control" value="flat allotment" id="form-flat">Flat Allotment
+													<label class="sr-only" for="form-flat">  Flat Allotment</label>												
+													<input type="checkbox" name="form-document"  value="flat allotment" id="form-flat">  Flat Allotment
 													</div>
 													<div class="form-group">
-													<label class="sr-only" for="form-telephone">Telephone</label>												
-													<input type="checkbox" name="form-document" class="form-telephone form-control" value="telephone" id="form-telephone">Telephone
+													<label class="sr-only" for="form-telephone">  Telephone</label>												
+													<input type="checkbox" name="form-document"  value="telephone" id="form-telephone">  Telephone
 													</div>
 													<div class="form-group">
 													<label class="sr-only" for="form-lease">Lease Aggrement</label>												
-													<input type="checkbox" name="form-document" class="form-lease form-control" value="lease aggrement" id="form-lease">Lease Aggrement
+													<input type="checkbox" name="form-document"  value="lease aggrement" id="form-lease">  Lease Aggrement
 													</div>
 													<div class="form-group">
 													<label class="sr-only" for="form-lic"> LIC Policy </label>												
-													<input type="checkbox" name="form-document" class="form-lic form-control" value="lic policy" id="form-lic">LIC Policy
+													<input type="checkbox" name="form-document"  value="lic policy" id="form-lic">  LIC Policy
 													</div>
 													
 												</div><!-- col -->
@@ -237,27 +238,27 @@
 												<div class="col-sm-6" >
 													<div class="form-group">
 													<label class="sr-only" for="form-voter"> Voter ID </label>												
-													<input type="checkbox" name="form-document" class="form-voter form-control" value="voter id" id="form-voter"> Voter ID
+													<input type="checkbox" name="form-document"  value="voter id" id="form-voter">  Voter ID
 													</div>
 													<div class="form-group">
 													<label class="sr-only" for="form-dl"> Driving License </label>												
-													<input type="checkbox" name="form-document" class="form-dl form-control" value="driving license" id="form-dl">Driving Licence
+													<input type="checkbox" name="form-document"  value="driving license" id="form-dl">  Driving Licence
 													</div>
 													<div class="form-group">
 													<label class="sr-only" for="form-passport"> Passport </label>												
-													<input type="checkbox" name="form-document"  class="form-passport form-control" value="passport" id="form-passport"> Passport
+													<input type="checkbox" name="form-document"   value="passport" id="form-passport">  Passport
 													</div>
 													<div class="form-group">
 													<label class="sr-only" for="form-rc"> Ration Card </label>												
-													<input type="checkbox" name="form-document"  class="form-rc form-control" value="ration card" id="form-rc">Ration Card
+													<input type="checkbox" name="form-document"   value="ration card" id="form-rc">  Ration Card
 													</div>
 													<div class="form-group">
 													<label class="sr-only" for="form-house"> House Registration </label>												
-													<input type="checkbox" name="form-document"  class="form-house form-control" value="house registration" id="form-house">House Registration
+													<input type="checkbox" name="form-document"   value="house registration" id="form-house">  House Registration
 													</div>
 													<div class="form-group">
 													<label class="sr-only" for="form-self"> Self-Declaration </label>												
-													<input type="checkbox" name="form-document" class="form-self form-control" value="self declaration" id="form-self">Self-Declaration
+													<input type="checkbox" name="form-document"  value="self declaration" id="form-self">  Self-Declaration
 													</div>
 												</div><!-- col -->
 										</div><!-- row -->
@@ -301,7 +302,13 @@
 														</div>
 													</div>
 											    </div><!-- col -->
-											</div><!-- row -->
+                                                                                           </div><!-- row -->
+                                                                                            <div class="form-bottom">
+                                                                                           <div class="form-group">
+											   <label for="form-stove">Do you want to purchase Stove(Chula)? </label><br/>
+                                                                                           <input type="radio" name="form-stove" id="form-stove" value="yes">Yes
+                                                                                           <input type="radio" name="form-stove" id="form-stove" value="no">No
+                                                                                           </div> 
 				                        <button type="button" class="btn btn-previous">Previous</button>
                                                         <input type="submit" value="submit"/>
 						

@@ -72,11 +72,15 @@ public class newconnection extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+           response.setContentType("text/html;charset=UTF-8");
+        
+            /* TODO output your page here. You may use following sample code. */
         try{
+            PrintWriter out = response.getWriter();
         String fname = request.getParameter("form-first-name");
             String mname = request.getParameter("middle-name");
             String lname = request.getParameter("form-last-name");
-            String customername = fname+""+mname+""+lname;
+            String customername = fname+" "+mname+" "+lname;
             String dob = request.getParameter("form-dob");
             String father = request.getParameter("form-father-name");
             String mother = request.getParameter("form-mother-name");
@@ -85,15 +89,15 @@ public class newconnection extends HttpServlet {
             String pincode = request.getParameter("form-pincode");
             int pin = Integer.parseInt(pincode.trim());
             String telephone = request.getParameter("form-telephone");
-            int tele= Integer.parseInt(telephone.trim());
+           // int tele= Integer.parseInt(telephone.trim());
             String mob = request.getParameter("form-mob");
-            long mobile = Long.parseLong(mob);
+            long mobile = Long.parseLong(mob.trim());
             String email = request.getParameter("form-email");
             String bank = request.getParameter("form-bank");
             String branch = request.getParameter("form-branch-address");
             String ifsc = request.getParameter("form-ifsc");
             String acc = request.getParameter("form-accno");
-            long account = Long.parseLong(acc.trim());
+           // long account = Long.parseLong(acc.trim());
             String[] id = request.getParameterValues("form-document");
             String adharno = request.getParameter("form-adharno");
             String pan = request.getParameter("form-panno");
@@ -102,15 +106,72 @@ public class newconnection extends HttpServlet {
             String ration = request.getParameter("form-rationno");
             String voter = request.getParameter("form-voterno");
             String state = request.getParameter("form-stateid");
-           
-            System.out.println("name ="+customername+" "+"dob ="+ dob +" "+"fname"+ father+" "+"mname ="+ mother+" "+"spouse ="+spouse+" "+"address ="+address+" "+"pin ="+pin);
-            System.out.println("tele ="+tele+" "+"mob ="+mobile+" "+"email="+email+" "+"bank="+bank+" "+"branch ="+branch+" "+"ifsc ="+ifsc+" "+"acc ="+account+" "+"adharno ="+adharno+" "+"pan no="+pan);
+            out.println("Name =" + customername);
+            out.println("Date Of Birth =" + dob);
+            out.println("Father's Name =" + fname);
+            out.println("Mother;s name =" + mname);
+            if (spouse.equals("")||spouse.equals(" "))
+            {
+            }
+            else
+            {
+                out.println("Spouse Name ="+ spouse);
+            }
+            out.println("Address ="+ address);
+            out.println("Pin Code"+pin);
+            if(telephone.equals("")||telephone.equals(" "))
+            {}
+            else{
+            out.println("Telephone Number = "+telephone);}
+            out.println("Mobile Number ="+ mobile);
+            if(email.equals("")|| email.equals(" "))
+            {}
+            else{
+            out.println("Email ID ="+email);}
+            if(bank.equals("")|| bank.equals(" "))
+            {}
+            else{
+            out.println("Bank Name ="+ bank);}
+            if(branch.equals("")|| branch.equals(" "))
+            {}
+            else{out.println("Bank Branch ="+branch);}
+            if(ifsc.equals("")||ifsc.equals(" "))
+            {}
+            else{out.println("IFSC Code ="+ifsc);}
+            if(acc.equals("")||acc.equals(" "))
+            {}
+            else{out.println("Account Number ="+acc);}
+            if(adharno.equals("")||adharno.equals(" "))
+            {}
+            else{out.println("Adhar Number ="+adharno);}
+            if(pan.equals("")||pan.equals(" "))
+            {}
+            else{out.println("Pan Number ="+pan);}
+           /* if(passport.equals("")||passport.equals(" ")||passport.equals(null))
+            {passport=" ";}
+            else{out.println("Passport Number ="+passport);}*/
+            if(dl.equals("")||dl.equals(" "))
+            {}
+            else{out.println("Driving Licence ="+dl);}
+            if(ration.equals("")|| ration.equals(" "))
+            {}
+            else{out.println("Ration Card Number ="+ration);}
+            if(voter.equals("")||voter.equals(" "))
+            {}
+            else{out.println("Voter ID Number ="+voter);}
+            if(state.equals("")||state.equals(" "))
+            {}
+            else{out.println("State or Central Number ="+state);}
+             
+           /* System.out.println("name ="+customername+" "+"dob ="+ dob +" "+"fname ="+ father+" "+"mname ="+ mother+" "+"spouse ="+spouse+" "+"address ="+address+" "+"pin ="+pin);
+            System.out.println("tele ="+telephone+" "+"mob ="+mobile+" "+"email="+email+" "+"bank ="+bank+" "+"branch ="+branch+" "+"ifsc ="+ifsc+" "+"acc ="+acc+" "+"adharno ="+adharno+" "+"pan no="+pan);
             System.out.println("passport ="+passport+" "+"dl ="+dl+" "+"ration ="+ ration+" "+"voter ="+voter+" "+"state="+state);
-            try{
+           */  try{
             for(int i=0;i<id.length;i++)
             {
-                System.out.println(id[i]);
+                out.println(id[i]);
             }
+           
             }catch(NullPointerException f)
             {System.out.println("No check box selected");}
         }catch(Exception e)
