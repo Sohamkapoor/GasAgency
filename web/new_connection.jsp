@@ -36,7 +36,27 @@
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
         <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+        <script>
+            function mobileNumber(){
 
+     var Number = document.getElementById('form-mob').value;
+     var IndNum = /^[0]?[789]\d{9}$/;
+
+     if(IndNum.test(Number)){
+        return;
+    }
+
+    else{
+        $('#form-b').load("content.html");
+        alert("yo")
+        $('#errMessage').text('please enter valid mobile number');
+        document.getElementById('form-mob').focus();
+        document.getElementById('form-b');
+        
+    }
+
+}
+            </script>
     </head>
 
     <body>
@@ -108,7 +128,7 @@
 		                        		</div>
 		                            </div>
 							
-		                            <div class="form-bottom">
+                                                                    <div class="form-bottom" id="form-b">
                                                 <div class="form-group">
 				                <label  for="Salute">Salutation </label>
 				                <input type="radio" name="salutation" id="Mr" value="Mr">Mr
@@ -160,13 +180,16 @@
 				                        </div>
 										<div class="form-group">
 				                        	<label class="sr-only" for="form-mob">Mobile Number</label>
-                                                                <input type="number" name="form-mob" min="1111111111" max="9999999999" placeholder="Mobile Number" class="form-mob form-control" id="form-mob">
+                                                                <!--input type="number" name="form-mob" min="1111111111" max="9999999999" placeholder="Mobile Number" class="form-mob form-control" id="form-mob"-->
+                                                                <input type="number" name="form-mob" placeholder="Mobile Number" class="form-mob form-control" id="form-mob"  >
+                                                                <span id="errMessage" style="color:red;font-weight:bold"></span>
 				                        </div>
 										<div class="form-group">
 				                        	<label class="sr-only" for="form-email">Email</label>
 				                        	<input type="email" name="form-email" placeholder="Email ID" class="form-email form-control" id="form-email">
 				                        </div>
-				                        <button type="button" class="btn btn-next">Next</button>
+                                                <button type="button" class="btn btn-next" onclick="mobileNumber()">Next</button>
+                                                 <!--button type="button" class="btn btn-next" onclick="mobileNumber()">Next</button-->
 				                    </div>
 			                    </fieldset>
 			                    

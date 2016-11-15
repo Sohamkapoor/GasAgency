@@ -24,8 +24,23 @@ jQuery(document).ready(function() {
     
     // next step
     $('.registration-form .btn-next').on('click', function() {
+        
+         var Number = document.getElementById('form-mob').value;
+         var IndNum = /^[0]?[789]\d{9}$/;
+         var next_step=false;
+
+     if(IndNum.test(Number)){
+        next_step=true;
+    }
+
+    else{
+        $('#errMessage').text('please enter valid mobile number');
+        document.getElementById('form-mob').focus();
+               
+    }
+        
     	var parent_fieldset = $(this).parents('fieldset');
-    	var next_step = true;
+    	
     	
     	parent_fieldset.find('input[type="password"]').each(function() {
     		if( $(this).val() == "" ) {
@@ -38,6 +53,7 @@ jQuery(document).ready(function() {
     	});
     	
     	if( next_step ) {
+            $('#errMessage').empty();
     		parent_fieldset.fadeOut(400, function() {
 	    		$(this).next().fadeIn();
 	    	});
